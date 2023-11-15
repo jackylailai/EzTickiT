@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EzTickiT</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bookingSucc.css' %}">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> -->
+</head>
+
+<body>
+    <div class="topcenter">
+        <div class="topcontainer">
+            <div class="top">
+                <div class="left-div">
+                    EzTickiT
+                </div>
+                <div class="right-div">
+                    <div id="reservation-top">訂購紀錄</div>
+                    <div id="showLoginForm">登入/註冊</div>
+                    <div id="logout">登出帳戶</div>
+                </div>
+            </div>
+            <div class="top-2">
+                <div class="top-div2">
+                    <div id="exhibition">展覽</div>
+                    <div id="entertainment">娛樂</div>
+                    <div id="sports">運動</div>
+                </div>
+                <!-- <div class="right-div2">
+                    <div id="reservation-top">娛樂</div>
+                    <div id="showLoginForm">運動</div> -->
+                <!-- <div id="logout"></div> -->
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+    <div id="loginModal" class="modal">
+        <div class="modal-header"></div>
+        <div class="modal-content">
+            <img src="{% static 'images/icon_close.svg' %}" alt="" class="icon-close">
+            <h3>登入會員帳號</h3>
+            <form id="loginForm">
+                <div class="emailinput">
+                    <label for="loginEmail"></label>
+                    <input type="email" id="loginEmail" name="email" placeholder="請輸入電子信箱" required>
+                </div>
+                <div class="passwordinput">
+                    <label for="loginPassword"></label>
+                    <input type="password" id="loginPassword" name="password" placeholder="請輸入密碼" required>
+                </div>
+                <button type="button" id="loginButton">登入帳戶</button>
+            </form>
+            <div id="messageContainer" class="message-container"></div>
+            <div class="signuptitle" id="sigupLink">
+                還沒有帳戶？點此註冊
+            </div>
+        </div>
+    </div>
+    <div id="signupModal" class="signupModal">
+        <div class="modal-header2"></div>
+        <div class="modal-content2">
+            <img src="{% static 'images/icon_close.svg' %}" alt="" class="icon-close2">
+            <h3>註冊會員帳號</h3>
+            <form id="signupForm">
+                <div class="nameinput">
+                    <input type="name" id="signupName" name="name" placeholder="請輸入姓名" required>
+                </div>
+                <div class="emailinput">
+                    <input type="email" id="signupEmail" name="email" placeholder="請輸入電子信箱" required>
+                </div>
+                <div class="passwordinput">
+                    <input type="password" id="signupPassword" name="password" placeholder="請輸入密碼" required>
+                </div>
+                <button type="button" id="signupButton">註冊新帳戶</button>
+            </form>
+            <div id="messageContainer2" class="message-container2"></div>
+            <div class="logintitle" id="loginLink">
+                已經有帳戶了？點此登入
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div id="content">
+            <div class="container">
+                <div class="navigation-bar">
+                    <div class="navigation-box" id="choose-ticket"><img src="{% static 'images/1-circle.svg' %}" class="first-step"alt="">選擇票區</div>
+                    <div class="navigation-box" id="inf-ticket"><img src="{% static 'images/2-circle.svg' %}" class="second-step"alt="">填寫購票資訊</div>
+                    <div class="navigation-box" id="succ-ticket"><img src="{% static 'images/3-circle.svg' %}" class="third-step"alt="">訂購完成</div>
+                </div>
+                <div class="event-title">P．LEAGUE＋ 高雄17直播鋼鐵人例行賽主場 桃園璞園領航猿-高雄17直播鋼鐵人</div>
+                <div></div>
+                <!-- <hr> -->
+                <div class="congratulation-container">
+                    <div class="tick"></div>
+                    <div class="congratulation-box">
+                        <div><h3>恭喜 ！ 您已完成訂單</h3></div>
+                        <div class="smalltitle">建議將活動加入行事曆，以免錯過精彩活動喔 ！</div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="description-time">
+                        <div class="description-subtitle">開始時間</div>
+                        <div class="description-content"><i class="bi bi-calendar-check-fill"></i>2023/11/25</div>
+                    </div>
+                    <div class="description-place">
+                        <div class="description-subtitle">活動地點</div>
+                        <div class="description-content">鳳山體育館</div>
+                    </div>
+                    <div class="booking-number">訂單編號：</div>
+                    <div class="ticketBlock">
+                        <div class="ticketBlockTitle">
+                            <div class="ticket-ticket">票券</div>
+                            <div class="ticket-seat">座位</div>
+                            <div class="ticket-detail">明細</div>
+                            <div class="ticket-pay">付款方式</div>
+                        </div>
+                        <div class="ticketBlockContent">
+                            <div class="ticket-ticket"  id="ticket-1area">1樓搖滾A區</div>
+                            <div class="ticket-seat" id="real-seat">C排2號</div>
+                            <div class="ticket-detail" id="ticket-1price"></div>
+                            <div class="ticket-pay">信用卡</div>
+                        </div>
+                        <!-- <div class="ticketBlockContent">
+                            <div class="ticket-name">名稱</div>
+                            <div class="ticket-time">活動時間</div>
+                            <div class="ticket-place">場地</div>
+                            <div class="ticket-area">區域</div>
+                            <div class="ticket-price">價格</div>
+                        </div> -->
+                    </div>
+                </div>
+                <hr>
+                <div class="div-total-price">
+                    <div class="total-price">總計（付款金額）</div>
+                    <div class="price" id="ticket-total"></div>
+                </div>
+                <div class="wrapper">
+                    <div class="content">
+                        <hr class="lowerhr">
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <div class="content">
+                        <!-- <hr class="lowerhr"> -->
+
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <div class="content-end">
+                        <!-- <hr class="lowerhr"> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="content">
+            <div class="content2" id="attraction-list">
+            </div>
+        </div>
+    </div>
+    <footer id="footer-id">
+        <p>COPYRIGHT © 2023 ez ｜聯絡我們</p>
+    </footer>
+</body>
+<script src="{% static 'js/customerInf.js' %}"></script>
+</html>
