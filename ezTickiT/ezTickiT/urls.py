@@ -22,6 +22,9 @@ from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from ez_app.utils.calculateSeat import AllocateSeatAPIView
+from django.http import HttpResponse
+
+
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -62,6 +65,9 @@ urlpatterns = [
     path('api/users/register_user/', CreateUserView.as_view({'post': 'register_user'}), name='register-user'),
     path('api/users/login_user/', CreateUserView.as_view({'post': 'login_user'}), name='login-user'),
     path('api/users/auth_user/', AuthUserAPIView.as_view(), name='auth-user'),
+
+
+    path('loaderio-f0a3d30574651a577c2a7b74b3cbd301/', lambda request: HttpResponse("loaderio-f0a3d30574651a577c2a7b74b3cbd301")),
 
     path("swagger/", schema_view.with_ui("swagger", cache_timeout=0), name="schema-swagger-ui"),
 ]
