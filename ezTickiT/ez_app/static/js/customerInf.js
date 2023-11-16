@@ -337,7 +337,7 @@ async function createTicket(eventId, realArea, price,responseDataData) {
             response.json().then(data => {
                 console.log("response", data);
                 console.log('Ticket 創建成功');
-                alert(`Ticket 創建成功，您的座位${data.row_number}排${data.seat_number}號，目前總共及剩餘座位：${data.seat_number}/${data.remaining_count}`);
+                alert(`Ticket 創建成功，您的座位${data.row_number}排${data.seat_number}號，目前總共及剩餘座位：${data.total_count}/${data.remaining_count}`);
                 console.log('Total Count:', data.total_count);
                 console.log('Remaining Count:', data.remaining_count);
                 console.log('Row Number:', data.row_number);

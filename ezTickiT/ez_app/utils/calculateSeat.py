@@ -27,7 +27,7 @@ class AllocateSeatAPIView(APIView):
         selected_area = self.request.data.get('seat')
         price = request.data.get('price')
         user_id = request.data.get('user_id')
-        print("有收到解析")
+        print(selected_area,"selected_area")
         quantity = request.data.get('quantity')  # 可以接收但不使用
         status = request.data.get('status')
         #創 seat_area instance
