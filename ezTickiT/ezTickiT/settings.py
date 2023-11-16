@@ -28,7 +28,7 @@ SECRET_KEY = "django-insecure-znf_^!!(m*#jrpl4$-dps-!+16^94$+=!2j7h6m#@r4344fvi*
 DEBUG = True
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['.jweb.com', '54.206.232.36', '54.206.232.36:8000']
+ALLOWED_HOSTS = ['jweb.world','.jweb.world', '54.206.232.36', '54.206.232.36:8000']
 
 # Application definition
 
