@@ -53,7 +53,7 @@ urlpatterns = [
     path("event",views.event_page, name="event_page"),
     path("gameBookingPage",views.game_booking_page, name="game_booking_page"),
     path('customerInf/<str:area>', views.customerInf, name='customer_inf'),
-    path("bookingSucc/", views.bookingSucc, name='booking_succ'),
+    path("bookingSucc", views.bookingSucc, name='booking_succ'),
     path("maintainance", views.maintainance, name="maintainance"),
 
     path("api/" ,include(router.urls)),

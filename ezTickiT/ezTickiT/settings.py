@@ -31,7 +31,10 @@ DEBUG = True
 # ALLOWED_HOSTS = ['jweb.world','.jweb.world', '54.206.232.36', '54.206.232.36:8000','127.0.0.1:8000','127.0.0.1','172.31.11.120']
 ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['https://jweb.world']
-
+CORS_ALLOW_ALL_ORIGINS = True#允許全部
+# CORS_ALLOWED_ORIGINS = [
+#     "https://loader.io",  # 假設 loader.io 從這個域發送請求
+# ]
 # Application definition
 
 INSTALLED_APPS = [
@@ -43,6 +46,7 @@ INSTALLED_APPS = [
     "rest_framework",
     'rest_framework_simplejwt',
     "drf_yasg",
+    "corsheaders",
     "ez_app",
     "django.contrib.staticfiles",
 ]
@@ -77,7 +81,7 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
+    # "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
