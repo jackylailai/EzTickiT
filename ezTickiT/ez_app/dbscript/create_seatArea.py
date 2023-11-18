@@ -1,6 +1,11 @@
 
 from ez_app.models import SeatArea , Event
+import os
+import django
 
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ezTickiT.settings")
+
+django.setup()
 area_mapping = {
     "rocka": {"name": "搖滾A區", "total_count": 60},
     "rockb": {"name": "搖滾B區", "total_count": 60},

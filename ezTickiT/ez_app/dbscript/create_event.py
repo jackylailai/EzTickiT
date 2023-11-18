@@ -1,6 +1,11 @@
 from datetime import datetime
 from ez_app.models import Event
+import os
+import django
 
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ezTickiT.settings")
+
+django.setup()
 event_data = [
     {
         "name": "桃園璞園領航猿-高雄17直播鋼鐵人",

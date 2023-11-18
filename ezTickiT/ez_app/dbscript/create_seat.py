@@ -1,5 +1,10 @@
 from ez_app.models import SeatArea, Seat, Event
+import os
+import django
 
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ezTickiT.settings")
+
+django.setup()
 
 seat_areas = SeatArea.objects.all()
 
